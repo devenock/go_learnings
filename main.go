@@ -1,6 +1,6 @@
 package main
 
-import "devenock/go_course/goiterators"
+import "devenock/go_course/goerrors"
 
 func main() {
 	// // hello
@@ -61,5 +61,8 @@ func main() {
 	// gogenerics.GoGenerics()
 
 	// range iterators
-	goiterators.GoIterators()
+	// goiterators.GoIterators()
+
+	// error
+	goerrors.GoErrors()
 }
