@@ -1,6 +1,8 @@
 package main
 
-import "devenock/go_course/goroutines"
+import (
+	"devenock/go_course/gochannels"
+)
 
 func main() {
 	// // hello
@@ -67,5 +69,8 @@ func main() {
 	// goerrors.GoErrors()
 
 	// goroutines
-	goroutines.GoRoutines()
+	// goroutines.GoRoutines()
+
+	// channels
+	gochannels.GoChannels()
 }
