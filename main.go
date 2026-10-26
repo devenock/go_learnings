@@ -1,6 +1,6 @@
 package main
 
-import "devenock/go_course/goerrors"
+import "devenock/go_course/goroutines"
 
 func main() {
 	// // hello
@@ -64,5 +64,8 @@ func main() {
 	// goiterators.GoIterators()
 
 	// error
-	goerrors.GoErrors()
+	// goerrors.GoErrors()
+
+	// goroutines
+	goroutines.GoRoutines()
 }
