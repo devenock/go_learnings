@@ -1,6 +1,9 @@
 package gochannels
 
-import "fmt"
+import (
+	"fmt"
+	"time"
+)
 
 // Channels are the pipes that connect concurrent goroutines
 // You can send values into channels from one goroutine and receive those values into another goroutine.
@@ -28,4 +31,21 @@ func GoChannels() {
 	students <- "channel"
 	fmt.Println(<-students)
 	fmt.Println(<-students)
+
+	// Start a worker goroutine, giving it the channel to notify on.
+	done := make(chan bool, 1)
+	go worker(done)
+	// Block until we receive a notification from the worker on the channel.
+	<-done
+}
+
+// Channel Synchronization
+// We can use channels to synchronize execution across goroutines, e.g using a blocking receive to wait for a goroutine to finish:
+// When waiting for multiple goroutines to finish, you may prefer to use WaitGroup
+func worker(done chan bool) {
+	fmt.Println("working...")
+	time.Sleep(time.Second)
+	fmt.Println("done")
+	// Send a value to notify that we’re done.
+	done <- true
 }
